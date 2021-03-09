@@ -23,7 +23,6 @@ public class ElegirFrutaDelBoss : MonoBehaviour
 
     private SpriteRenderer panelOpciones;
 
-    // Start is called before the first frame update
     void Start()
     {
         // we are accessing the SpriteRenderer that is attached to the Gameobject
@@ -55,15 +54,6 @@ public class ElegirFrutaDelBoss : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (Input.GetMouseButtonDown(0)) // If the space bar is pushed down
-    //    {
-    //        StartCoroutine(ChangeTheDarnSprite()); // call method to change sprite
-    //    }
-    //}
-
     void PrimerBotonOnClick()
     {
         StartCoroutine(EligeRtaIncorrecta()); // call method to change sprite
@@ -80,19 +70,18 @@ public class ElegirFrutaDelBoss : MonoBehaviour
 
     void ReintentarBotonOnClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     void ContinuarBotonOnClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
     void SalirBotonOnClick()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
-
 
     IEnumerator EligeRtaIncorrecta()
     {

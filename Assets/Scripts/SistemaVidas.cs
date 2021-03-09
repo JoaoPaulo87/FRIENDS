@@ -34,8 +34,7 @@ public class SistemaVidas : MonoBehaviour
     {
         if (collision.gameObject.tag == "Serpiente")
         {
-            Destroy(myCanvas.transform.GetChild(cantDeCorazones + 1).gameObject);
-            cantDeCorazones -= 1;
+            PerderVida();
             collision.gameObject.GetComponent<AudioSource>().Play();
         }
     }
@@ -45,7 +44,13 @@ public class SistemaVidas : MonoBehaviour
         //Si tenemos 0 cantidad de corazones, perdemos y se recarga la pantalla.
         if (cantDeCorazones < 1)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
+    }
+
+    public void PerderVida()
+    {
+        Destroy(myCanvas.transform.GetChild(cantDeCorazones + 1).gameObject);
+        cantDeCorazones -= 1;
     }
 }

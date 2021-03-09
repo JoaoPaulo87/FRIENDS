@@ -10,7 +10,8 @@ TagManager:
   - Boss
   - Serpiente
   - Estrella
-  - LimiteCamaraIzq
+  - Fuego
+  - Agua
   layers:
   - Default
   - TransparentFX
