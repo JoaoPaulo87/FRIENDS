@@ -20,6 +20,7 @@ public class ElegirFrutaDelBoss : MonoBehaviour
     public Sprite spritePanelRespuestas; // Drag your second sprite here
     public Sprite spritePanelRtaCorrecta; // Drag your second sprite here
     public Sprite spritePanelRtaIncorrecta; // Drag your second sprite here
+    public Sprite spriteOpcion1Incorrecta; // Drag your second sprite here
 
     private SpriteRenderer panelOpciones;
 
@@ -88,6 +89,7 @@ public class ElegirFrutaDelBoss : MonoBehaviour
         if (panelOpciones.sprite == spritePanelBasico) // if the spriteRenderer sprite = sprite1 then change to sprite2
         {
             panelOpciones.sprite = spritePanelRespuestas;
+          //  this.botonOpcion1.GetComponent<Image>().sprite = this.m_spriteOn;
 
             yield return new WaitForSeconds(3);
 

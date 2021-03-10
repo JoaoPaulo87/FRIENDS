@@ -11,4 +11,34 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrimerNivel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainOpciones.unity
+    guid: 53793075e2560654988ee770cf3b614a
+  - enabled: 1
+    path: Assets/Scenes/MisAmigos.unity
+    guid: ad13342c1bdab4f4ea096f681aa42ac6
+  - enabled: 1
+    path: Assets/Scenes/Niveles/Niveles1.unity
+    guid: 8b054bfda28e7f64eb36d205e1b1aeb1
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/RedesSociales.unity
+    guid: 02673ddc2dc647749ae68a076607574d
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 4e15b609ff13c494ca22571b2da04a90
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar.unity
+    guid: 7e5d395c643459747aa369708f3fbe08
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar2.unity
+    guid: 2c4559db54c02e542ac664725c111921
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar3.unity
+    guid: 95d066dedc9dc484586b7c0ee2368828
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar4.unity
+    guid: e9ff1ba8bdf3c9d498dac1e7c8dd0073
   m_configObjects: {}

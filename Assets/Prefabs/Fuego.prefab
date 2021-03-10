@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6855722971656654387}
   - component: {fileID: 6855722971656654384}
   - component: {fileID: 6855722971656654398}
+  - component: {fileID: 556860841839945149}
   m_Layer: 0
   m_Name: Fuego
   m_TagString: Fuego
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: fa0f8e6450e0bb34f961a768aaad1424, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c970e59b652b29c40a9223c85eb5cd78, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -231,3 +232,22 @@ CircleCollider2D:
   m_Offset: {x: -0.0000005722046, y: -0.78999996}
   serializedVersion: 2
   m_Radius: 0.74
+--- !u!95 &556860841839945149
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855722971656654397}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e1b611ebeb76b7e4da4a7a9e8d5cf128, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
