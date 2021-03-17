@@ -12,33 +12,50 @@ public class ElegirFrutaDelBoss : MonoBehaviour
     public Button botonOpcion1;
     public Button botonOpcion2;
     public Button botonOpcion3;
+
     public Button botonReintentar;
     public Button botonContinuar;
     public Button botonSalir;
 
-    public Sprite spritePanelBasico; // Drag your first sprite here
-    public Sprite spritePanelRespuestas; // Drag your second sprite here
-    public Sprite spritePanelRtaCorrecta; // Drag your second sprite here
-    public Sprite spritePanelRtaIncorrecta; // Drag your second sprite here
-    public Sprite spriteOpcion1Incorrecta; // Drag your second sprite here
+    public Sprite spritePanelBasico;
+    public Sprite spritePanelRtaCorrecta;
+    public Sprite spritePanelRtaIncorrecta;
+
+    public Sprite spriteOpcion1Incorrecta;
+    public Sprite spriteOpcion2Incorrecta;
+    public Sprite spriteOpcion3Correcta;
+
+    public Sprite spriteOpcion1;
+    public Sprite spriteOpcion2;
+    public Sprite spriteOpcion3;
 
     private SpriteRenderer panelOpciones;
+
+    [SerializeField] private Canvas m_menuSiguienteNivel;
+
+    [SerializeField] private AudioSource m_musicaGanar;
+    [SerializeField] private AudioSource m_musicaPerder;
+    [SerializeField] private AudioSource m_musicaPrimerNivelFondo;
+
+    private bool isOpcion1Seleccionada = false;
 
     void Start()
     {
         // we are accessing the SpriteRenderer that is attached to the Gameobject
-        panelOpciones = GetComponent<SpriteRenderer>(); 
+        this.panelOpciones = GetComponent<SpriteRenderer>();
 
-        Button btn1 = botonOpcion1.GetComponent<Button>();
-        Button btn2 = botonOpcion2.GetComponent<Button>();
-        Button btn3 = botonOpcion3.GetComponent<Button>();
-        Button btnRei = botonReintentar.GetComponent<Button>();
-        Button btnCon = botonContinuar.GetComponent<Button>();
-        Button btnSal = botonSalir.GetComponent<Button>();
+        Button btn1 = this.botonOpcion1.GetComponent<Button>();
+        Button btn2 = this.botonOpcion2.GetComponent<Button>();
+        Button btn3 = this.botonOpcion3.GetComponent<Button>();
 
         btn1.onClick.AddListener(PrimerBotonOnClick);
         btn2.onClick.AddListener(SegundoBotonOnClick);
         btn3.onClick.AddListener(TercerBotonOnClick);
+
+        Button btnRei = this.botonReintentar.GetComponent<Button>();
+        Button btnCon = this.botonContinuar.GetComponent<Button>();
+        Button btnSal = this.botonSalir.GetComponent<Button>();
+
         btnRei.onClick.AddListener(ReintentarBotonOnClick);
         btnCon.onClick.AddListener(ContinuarBotonOnClick);
         btnSal.onClick.AddListener(SalirBotonOnClick);
@@ -47,20 +64,24 @@ public class ElegirFrutaDelBoss : MonoBehaviour
         this.botonContinuar.gameObject.SetActive(false);
         this.botonSalir.gameObject.SetActive(false);
 
-        // if the sprite on spriteRenderer is null then
-        if (panelOpciones.sprite == null)
+        // if the sprite on panelOpciones is null then
+        if (this.panelOpciones.sprite == null)
         {
-            // set the sprite to sprite1
-            panelOpciones.sprite = spritePanelBasico;
+            // set the sprite to spritePanelBasico
+            this.panelOpciones.sprite = this.spritePanelBasico;
         }
+
+        this.m_menuSiguienteNivel.gameObject.SetActive(false);
     }
 
     void PrimerBotonOnClick()
     {
+        this.isOpcion1Seleccionada = true;
         StartCoroutine(EligeRtaIncorrecta()); // call method to change sprite
     }
     void SegundoBotonOnClick()
     {
+        this.isOpcion1Seleccionada = false;
         StartCoroutine(EligeRtaIncorrecta()); // call method to change sprite
     }
 
@@ -71,74 +92,86 @@ public class ElegirFrutaDelBoss : MonoBehaviour
 
     void ReintentarBotonOnClick()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("PrimerNivel");
     }
 
     void ContinuarBotonOnClick()
     {
-        SceneManager.LoadScene(1);
+        Time.timeScale = 0f;
+        this.m_menuSiguienteNivel.gameObject.SetActive(true);
     }
 
     void SalirBotonOnClick()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainMenu");
     }
 
     IEnumerator EligeRtaIncorrecta()
     {
-        if (panelOpciones.sprite == spritePanelBasico) // if the spriteRenderer sprite = sprite1 then change to sprite2
+        if (this.panelOpciones.sprite == this.spritePanelBasico)
         {
-            panelOpciones.sprite = spritePanelRespuestas;
-          //  this.botonOpcion1.GetComponent<Image>().sprite = this.m_spriteOn;
+            if (this.isOpcion1Seleccionada)
+            {
+                this.botonOpcion1.image.overrideSprite = this.spriteOpcion1Incorrecta;
+            }
+            else
+            {
+                this.botonOpcion2.GetComponent<Image>().sprite = this.spriteOpcion2Incorrecta;
+            }
 
             yield return new WaitForSeconds(3);
 
-            panelOpciones.sprite = spritePanelRtaIncorrecta;
+            this.panelOpciones.sprite = this.spritePanelRtaIncorrecta;
 
             this.botonOpcion1.gameObject.SetActive(false);
             this.botonOpcion2.gameObject.SetActive(false);
             this.botonOpcion3.gameObject.SetActive(false);
 
-            if (panelOpciones.sprite == spritePanelRtaIncorrecta)
+            if (this.panelOpciones.sprite == this.spritePanelRtaIncorrecta)
             {
                 this.botonReintentar.gameObject.SetActive(true);
                 this.botonSalir.gameObject.SetActive(true);
 
                 this.bossAnimator.SetBool("IsBossIdle", true);
                 this.bossAnimator.SetBool("IsBossSide", false);
+
+                this.m_musicaPrimerNivelFondo.Stop();
+                this.m_musicaPerder.Play();
             }
         }
         else
         {
-            panelOpciones.sprite = spritePanelBasico; // otherwise change it back to sprite1
+            this.panelOpciones.sprite = this.spritePanelBasico;
         }
     }
 
     IEnumerator EligeRtaCorrecta()
     {
-        if (panelOpciones.sprite == spritePanelBasico) // if the spriteRenderer sprite = sprite1 then change to sprite2
+        if (this.panelOpciones.sprite == this.spritePanelBasico)
         {
-            panelOpciones.sprite = spritePanelRespuestas;
+            this.botonOpcion3.GetComponent<Image>().sprite = this.spriteOpcion3Correcta;
 
             yield return new WaitForSeconds(3);
 
-            panelOpciones.sprite = spritePanelRtaCorrecta;
+            this.panelOpciones.sprite = this.spritePanelRtaCorrecta;
 
             this.botonOpcion1.gameObject.SetActive(false);
             this.botonOpcion2.gameObject.SetActive(false);
             this.botonOpcion3.gameObject.SetActive(false);
 
-            if (panelOpciones.sprite == spritePanelRtaCorrecta)
+            if (this.panelOpciones.sprite == this.spritePanelRtaCorrecta)
             {
                 this.botonContinuar.gameObject.SetActive(true);
 
-                this.bossAnimator.SetBool("IsBossHappy",true);
+                this.bossAnimator.SetBool("IsBossHappy", true);
                 this.amigoAnimator.SetBool("IsAmigoFestejando", true);
+
+                this.m_musicaGanar.Play();
             }
         }
         else
         {
-            panelOpciones.sprite = spritePanelBasico; // otherwise change it back to sprite1
+            this.panelOpciones.sprite = this.spritePanelBasico;
         }
     }
 
@@ -146,7 +179,7 @@ public class ElegirFrutaDelBoss : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            bossAnimator.SetBool("IsBossSide", true);
+            this.bossAnimator.SetBool("IsBossSide", true);
         }
     }
 }

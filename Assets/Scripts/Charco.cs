@@ -18,6 +18,7 @@ public class Charco : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             this.m_movimientoJugador.runSpeed = m_velocidadMovimientoReducida;
+            gameObject.GetComponent<AudioSource>().Play();
         }
     }
 

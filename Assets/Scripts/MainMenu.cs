@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayButton()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("PrimerNivel");
     }
 
@@ -27,16 +28,24 @@ public class MainMenu : MonoBehaviour
 
     public void MisAmigosButton()
     {
-        SceneManager.LoadScene("MisAmigos1");
+        SceneManager.LoadScene("MisAmigos");
     }
+
+    public void MisAmigosButton2()
+    {
+        SceneManager.LoadScene("MisAmigos2");
+    }
+
     public void NivelesButton()
     {
         SceneManager.LoadScene("Niveles1");
     }
+
     public void QueEsButton()
     {
         SceneManager.LoadScene("QueEs1");
     }
+
     public void SettingsButton()
     {
         SceneManager.LoadScene("Settings");
@@ -46,10 +55,12 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("ComoJugar2");
     }
+
     public void ComoJugarEscena3()
     {
         SceneManager.LoadScene("ComoJugar3");
     }
+
     public void ComoJugarEscena4()
     {
         SceneManager.LoadScene("ComoJugar4");
@@ -73,17 +84,16 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("QueEs3");
     }
+
     public void QueEsButton4()
     {
         SceneManager.LoadScene("QueEs4");
     }
+
     public void QueEsButton5()
     {
         SceneManager.LoadScene("QueEs5");
     }
-    public void QueEsButton6()
-    {
-        SceneManager.LoadScene("QueEs6");
-    }
+    
 }
     

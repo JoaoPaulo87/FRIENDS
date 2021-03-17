@@ -12,6 +12,8 @@ public class SistemaVidas : MonoBehaviour
     public Canvas myCanvas;
     public int offsetCorazon;
 
+    [SerializeField] private Canvas m_menuPerder;
+
     void Start()
     {
         // Esto es para que cree tantos corazones como le ponemos en la variable cantDeCorazones.
@@ -23,10 +25,8 @@ public class SistemaVidas : MonoBehaviour
             newCorazon.transform.parent = myCanvas.transform;
             posCorazon.position = new Vector2(posCorazon.position.x + offsetCorazon, posCorazon.position.y);
         }
-    }
-    void Update()
-    {
-        PerderJuego();
+
+        this.m_menuPerder.gameObject.SetActive(false);
     }
 
     // Cuando el jugador colisiona con un mono, pierde una vida.
@@ -36,15 +36,21 @@ public class SistemaVidas : MonoBehaviour
         {
             PerderVida();
             collision.gameObject.GetComponent<AudioSource>().Play();
+            PerderJuego();
         }
     }
 
-    private void PerderJuego()
+    public void PerderJuego()
     {
         //Si tenemos 0 cantidad de corazones, perdemos y se recarga la pantalla.
         if (cantDeCorazones < 1)
         {
-            SceneManager.LoadScene(1);
+            this.m_menuPerder.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            Time.timeScale = 1f;
         }
     }
 

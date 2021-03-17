@@ -8,7 +8,7 @@ public class PickupItems : MonoBehaviour
     public Slider itemsSlider;
     public float aumentoDeAvancePorItem;
     public GameObject bossObject;
-
+    
     void Update()
     {
         if(itemsSlider.value == 1.0)

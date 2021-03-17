@@ -18,6 +18,7 @@ public class Fuego : MonoBehaviour
         {
             this.sonidoGolpe.Play();
             this.player.PerderVida();
+            this.player.PerderJuego();
         }
     }
 }

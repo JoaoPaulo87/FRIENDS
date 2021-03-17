@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MenuSettings : MonoBehaviour
 {
     [SerializeField] private Button m_botonVolver;
-    [SerializeField] private Button m_botonSettings;
     [SerializeField] private Button m_botonSonido;
     [SerializeField] private Button m_botonMusica;
 
