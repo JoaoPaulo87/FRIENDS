@@ -6,6 +6,57 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/MainMenu.unity
+    guid: 9fcd4d4a34ff65843882ee2248fbd131
+  - enabled: 1
+    path: Assets/Scenes/PrimerNivel.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainOpciones.unity
+    guid: 53793075e2560654988ee770cf3b614a
+  - enabled: 1
+    path: Assets/Scenes/Niveles/Niveles1.unity
+    guid: 8b054bfda28e7f64eb36d205e1b1aeb1
+  - enabled: 1
+    path: Assets/Scenes/Niveles/Niveles2.unity
+    guid: f6c0c48e6a3d6dd4886cc3c18139425b
+  - enabled: 1
+    path: Assets/Scenes/RedesSociales.unity
+    guid: 02673ddc2dc647749ae68a076607574d
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 4e15b609ff13c494ca22571b2da04a90
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar.unity
+    guid: 7e5d395c643459747aa369708f3fbe08
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar2.unity
+    guid: 2c4559db54c02e542ac664725c111921
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar3.unity
+    guid: 95d066dedc9dc484586b7c0ee2368828
+  - enabled: 1
+    path: Assets/Scenes/ComoJugar/ComoJugar4.unity
+    guid: e9ff1ba8bdf3c9d498dac1e7c8dd0073
+  - enabled: 1
+    path: Assets/Scenes/QueEs/QueEs1.unity
+    guid: e087af2d6043ba049a2c93b37f59727e
+  - enabled: 1
+    path: Assets/Scenes/QueEs/QueEs2.unity
+    guid: 88584ef970814474fbaf920c78a8a003
+  - enabled: 1
+    path: Assets/Scenes/QueEs/QueEs3.unity
+    guid: 3135199b5c9dbd84881a714493ac349d
+  - enabled: 1
+    path: Assets/Scenes/QueEs/QueEs4.unity
+    guid: e8abf21690734f04dbf6c78c15c76479
+  - enabled: 1
+    path: Assets/Scenes/QueEs/QueEs5.unity
+    guid: 326424e4f394c344caa5ad6a7886deec
+  - enabled: 1
+    path: Assets/Scenes/MisAmigos/MisAmigos.unity
+    guid: cc6fa45ca9a0fd64bbdd06c833728aa6
+  - enabled: 1
+    path: Assets/Scenes/MisAmigos/MisAmigos2.unity
+    guid: bb10619f0bb82174db1777f8af587af4
   m_configObjects: {}

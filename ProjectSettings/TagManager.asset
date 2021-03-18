@@ -10,7 +10,10 @@ TagManager:
   - Boss
   - Serpiente
   - Estrella
-  - LimiteCamaraIzq
+  - Fuego
+  - Agua
+  - Musica
+  - Charco
   layers:
   - Default
   - TransparentFX

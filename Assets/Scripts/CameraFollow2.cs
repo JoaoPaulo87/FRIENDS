@@ -5,10 +5,10 @@ using UnityEngine;
 public class CameraFollow2 : MonoBehaviour
 {
     [SerializeField] private Transform targetFollow;
-    [SerializeField] private float offsetX;
-    [SerializeField] private float offsetY;
-    [SerializeField] private float minLimitX;
-    [SerializeField] private float maxLimitX;
+    [SerializeField] private float offsetX = 0f;
+    [SerializeField] private float offsetY = 0f;
+    [SerializeField] private float minLimitX = 0f;
+    [SerializeField] private float maxLimitX = 0f;
 
     private void Update()
     {
