@@ -13,6 +13,7 @@ TagManager:
   - Fuego
   - Agua
   - Musica
+  - Charco
   layers:
   - Default
   - TransparentFX

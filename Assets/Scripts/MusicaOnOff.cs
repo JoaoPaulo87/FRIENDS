@@ -10,8 +10,8 @@ public class MusicaOnOff : MonoBehaviour
     private GameObject[] m_sonidoViboras;
     private GameObject[] m_sonidoBanana;
     private GameObject[] m_sonidoEstrellas;
+    private GameObject[] m_sonidoCharcos;
 
-    // Start is called before the first frame update
     void Start()
     {
         this.m_musicaNivel = GameObject.FindGameObjectWithTag("Musica");
@@ -19,9 +19,9 @@ public class MusicaOnOff : MonoBehaviour
         this.m_sonidoFuego = GameObject.FindGameObjectsWithTag("Fuego");
         this.m_sonidoBanana = GameObject.FindGameObjectsWithTag("Banana");
         this.m_sonidoEstrellas = GameObject.FindGameObjectsWithTag("Estrella");
+        this.m_sonidoCharcos = GameObject.FindGameObjectsWithTag("Charco");
     }
 
-    // Update is called once per frame
     public void PonerOnMusica()
     {
         this.m_musicaNivel.GetComponent<AudioSource>().Play();
@@ -38,15 +38,23 @@ public class MusicaOnOff : MonoBehaviour
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0.386f;
         }
+
         foreach (GameObject audio in this.m_sonidoFuego)
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0.386f;
         }
+
         foreach (GameObject audio in this.m_sonidoBanana)
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0.386f;
         }
+
         foreach (GameObject audio in this.m_sonidoEstrellas)
+        {
+            audio.gameObject.GetComponent<AudioSource>().volume = 0.386f;
+        }
+
+        foreach (GameObject audio in this.m_sonidoCharcos)
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0.386f;
         }
@@ -58,15 +66,23 @@ public class MusicaOnOff : MonoBehaviour
         {
             audio.GetComponent<AudioSource>().volume = 0f;
         }
+
         foreach (GameObject audio in this.m_sonidoFuego)
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0f;
         }
+
         foreach (GameObject audio in this.m_sonidoBanana)
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0f;
         }
+
         foreach (GameObject audio in this.m_sonidoEstrellas)
+        {
+            audio.gameObject.GetComponent<AudioSource>().volume = 0f;
+        }
+
+        foreach (GameObject audio in this.m_sonidoCharcos)
         {
             audio.gameObject.GetComponent<AudioSource>().volume = 0f;
         }
